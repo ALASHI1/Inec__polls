@@ -103,9 +103,9 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#   'default': dj_database_url.config(conn_max_age=600)
-# }
+DATABASES = {
+    'default':dj_database_url.config('mysql://ben_shi: @localhost:3306/bincomphptest')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
