@@ -93,18 +93,26 @@ CORS_ALLOW_ALL_ORIGINS = True
 # }
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE':'django.db.backends.mysql',
+    #     'NAME':'bincomphptest',
+    #     'USER':'ben_shi',
+    #     'PASSWORD':'bincom',
+    #     'HOST':'localhost',
+    #     'PORT':'3306',
+    # }
     'default': {
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'bincomphptest',
-        'USER':'ben_shi',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'NAME':'heroku_558a487c1b28d9a',
+        'USER':'b2609f60068cd6',
+        'PASSWORD':'835f8fdc',
+        'HOST':'us-cdbr-east-05.cleardb.net',
     }
 }
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# mysql://b2609f60068cd6:835f8fdc@us-cdbr-east-05.cleardb.net/heroku_558a487c1b28d9a?reconnect=true
+# 'mysql://root:<password>@localhost:3306/<database>',
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
