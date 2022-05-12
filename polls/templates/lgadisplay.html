@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+{% if lgas %}
+<form method="POST">
+    {% csrf_token %}
+    <select style='width: -webkit-fill-available;height: 50px;' class="form-select" aria-label="Default select example">
+    <option selected>Open to select LGA</option>
+    {% for lga in lgas %} 
+    <option value="{{lga.uniqueid}}">{{lga.lga_name}}</option>
+    {% endfor %}
+    </select>
+</form>
+{% else %}
+<h1>No avaliable LGA</h1>
+{% endif %}
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("select.form-select").change(function() {
+                let selectedItem = $(this).children("option:selected").val();
+                window.location.href = "/lgaresults/" + selectedItem;
+              });
+          });
+      </script>
+</body>
+{% endblock %}

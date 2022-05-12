@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    {% if p_results %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Party</th>
+            <th scope="col">Scores</th>
+          </tr>
+        </thead>
+        {% for result in p_results %}
+        <tbody>
+          <tr>
+            <th scope="row">{{ result.result_id }}</th>
+            <td>{{ result.party_abbreviation }}</td>
+            <td>{{ result.party_score }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    {% else %}
+      <h1>No Results for this Polling unit</h1>
+    {% endif %}
+</body>
+{% endblock %}

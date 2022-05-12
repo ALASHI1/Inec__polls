@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .title{
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+ </style>   
+<body>
+    <div class='title'>
+    <h1>List of all Polls</h1>
+    <h4>Click to view results</h4>
+    </div>
+    <br>
+    {% for unit in p_units %}
+        {% if unit.polling_unit_name %}
+    <div class="list-group">
+        <a href="{% url 'result' unit.uniqueid %}" class="list-group-item list-group-item-action">{{ unit.polling_unit_name }}</a>
+        <br>
+        {% else %}
+        <p class="list-group-item list-group-item-action">Name Unavaliable</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+</body>
+{% endblock %}
