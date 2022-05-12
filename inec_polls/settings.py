@@ -92,19 +92,19 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE':'django.db.backends.mysql',
-#         'NAME':'bincomphptest',
-#         'USER':'ben_shi',
-#         'PASSWORD':'',
-#         'HOST':'localhost',
-#         'PORT':'3306',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':'bincomphptest',
+        'USER':'ben_shi',
+        'PASSWORD':'',
+        'HOST':'localhost',
+        'PORT':'3306',
+    }
+}
 
 DATABASES = {
-    'default':dj_database_url.config('mysql://ben_shi:@localhost:3306/bincomphptest')
+    'default': dj_database_url.config(conn_max_age=600)
 }
 
 # Password validation
