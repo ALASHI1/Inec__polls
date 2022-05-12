@@ -1,0 +1,1 @@
+web: gunicorn inec_polls.wsgi
