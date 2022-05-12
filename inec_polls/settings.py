@@ -85,12 +85,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     # 'default': {
@@ -101,16 +95,21 @@ DATABASES = {
     #     'HOST':'localhost',
     #     'PORT':'3306',
     # }
+    #HEROKU
     'default': {
         'ENGINE':'django.db.backends.mysql',
         'NAME':'heroku_558a487c1b28d9a',
         'USER':'b2609f60068cd6',
         'PASSWORD':'835f8fdc',
         'HOST':'us-cdbr-east-05.cleardb.net',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 # mysql://b2609f60068cd6:835f8fdc@us-cdbr-east-05.cleardb.net/heroku_558a487c1b28d9a?reconnect=true
 # 'mysql://root:<password>@localhost:3306/<database>',
+# mysql -u b2609f60068cd6 heroku_558a487c1b28d9a -h us-cdbr-east-05.cleardb.net --835f8fdc < bincom_test.sql
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
 
